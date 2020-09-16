@@ -1,10 +1,9 @@
 extends layout
 
 block content
-  h1= title
-  p #{title}
+  h1 #{user} #{title}
   p 안녕하세요 오늘은 #{date} 입니다
   p 지금 시각은 #{time} 입니다
   form(method="POST", action="/input")
-      input(type="text",name="m_contents")
+      input(type="text",name="user")
       button 전송
