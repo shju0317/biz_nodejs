@@ -3,7 +3,7 @@ extends layout
 block content
   h1= title
   p #{title}
-  p 안녕하세요 오늘은 #{moment} 입니다
+  p 안녕하세요 오늘은 #{date} 입니다
   form(method="POST", action="/input")
       input(type="text",name="m_contents")
       button 전송
