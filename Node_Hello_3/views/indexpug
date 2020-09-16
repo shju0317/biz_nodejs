@@ -4,6 +4,7 @@ block content
   h1= title
   p #{title}
   p 안녕하세요 오늘은 #{date} 입니다
+  p 지금 시각은 #{time} 입니다
   form(method="POST", action="/input")
       input(type="text",name="m_contents")
       button 전송
