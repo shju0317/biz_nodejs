@@ -14,3 +14,4 @@
 - npm install : express 프로젝트의 기본 dependency를 다운로드
 - npm install pug : jade view 엔진을 pug로 업데이트
 - npm uninstall jade
+- app.js의 view engine을 jade에서 pug로 변경
