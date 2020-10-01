@@ -24,7 +24,7 @@ dbConn.on("error", function (error) {
 });
 
 // mongoDB 서버
-mongoose.connect("mongodb://localhost/mybbs", {
+mongoose.connect("mongodb://localhost/myTodo", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -33,7 +33,7 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 
 // bbsRouter를 임포트
-var bbsRouter = require("./routes/bbsRoute");
+var todoRouter = require("./routes/todoRoute");
 
 var app = express();
 
@@ -51,7 +51,7 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 
 // localhost:3000/bbs/* 요청하면 bbsRouter를 호출
-app.use("/bbs", bbsRouter);
+app.use("/todo", todoRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
