@@ -3,7 +3,7 @@ var router = express.Router();
 
 const moment = require("moment");
 
-var bbsVO = require("../models/todoModel");
+var todoVO = require("../models/todoModel");
 
 // localhost:3000/todo/list URL 접근했을 때
 router.get("/list", function (req, res) {
@@ -18,14 +18,13 @@ router.get("/write", function (req, res) {
 });
 
 router.post("/write", function (req, res) {
-  req.body.t_date = moment(new Date()).format("YYYY-MM-DD");
-  req.body.t_count = 0;
+  req.body.to_date = moment(new Date()).format("YYYY-MM-DD");
 
   let data = new todoVO(req.body);
 
   data
     .save()
-    .then(function (bbsVO) {
+    .then(function (todoVO) {
       res.redirect("/todo/list");
     })
     .catch(function (error) {
@@ -50,7 +49,7 @@ router.get("/view/:id", function (req, res) {
     .then(function (result) {
       // PK값과 일치하는 item이 있으면 그 결과를 result에 담아준다
       //res.json(result);
-      // bbsView.pug를 rendering할 때  bbsVO라는
+      // bbsView.pug를 rendering할 때  todoVO라는
       res.render("todoView", { todoVO: result });
     })
     .catch(function (error) {
@@ -74,7 +73,7 @@ router.get("/delete/:id", function (req, res) {
 
 router.get("/update", function (req, res) {
   let id = req.params.id;
-  bbsVO.findOne({ _id: id }).then(function (result) {
+  todoVO.findOne({ _id: id }).then(function (result) {
     res.render("todoWrite", { todoVO: result });
   });
 });
