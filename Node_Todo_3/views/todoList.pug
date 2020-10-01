@@ -16,10 +16,10 @@ block content
                 //- 참조할 수 있도록 미리 코드를 만들어둔다
                 tr(data-id= vo._id)
                     td #{index + 1}
-                    td = vo.t_date
-                    td = vo.t_write
+                    td= vo.t_date
+                    td= vo.t_write
                     td
-                        a(href="/todo/view/" + vo._id) = vo.t_title
-                    td = vo.t_count
+                        a(href="/todo/view/" + vo._id)= vo.t_title
+                    td= vo.t_count
         p
             a(href="/todo/write") 새로작성
