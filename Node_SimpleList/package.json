@@ -2,7 +2,7 @@
   "name": "node_simplelist",
   "version": "1.0.0",
   "description": "",
-  "main": "app_file.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
