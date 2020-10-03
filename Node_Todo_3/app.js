@@ -49,7 +49,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 
-// localhost:3000/todo/* 요청하면 bbsRouter를 호출
+// localhost:3000/todo/* 요청하면 todoRouter를 호출
 app.use("/todo", todoRouter);
 
 // catch 404 and forward to error handler

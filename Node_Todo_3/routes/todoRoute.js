@@ -6,9 +6,21 @@ const moment = require("moment");
 var todoVO = require("../models/todoModel");
 
 // localhost:3000/todo/list URL 접근했을 때
+// router.get("/list", function (req, res) {
+//   todoVO.find().then(function (todoList) {
+//     res.render("todoList", { todoList });
+//   });
+// });
+
+router.get("/", function (req, res) {
+  todoVO.find().then(function (todoList) {
+    res.render("index", { todoList });
+  });
+});
+
 router.get("/list", function (req, res) {
   todoVO.find().then(function (todoList) {
-    res.render("todoList", { todoList });
+    res.render("index", { todoList });
   });
 });
 

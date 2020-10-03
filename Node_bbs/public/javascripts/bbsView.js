@@ -2,7 +2,7 @@ const { $where } = require("../../models/bbsModel");
 
 $(function () {
   // class가 view-btn인 버튼이 클릭되면
-  $("button.view-btn").click(function () {
+  $("button.view-bt").click(function () {
     // 클릭된 버튼의 text(문자열)을 추출
     let text = $(this).text();
 
