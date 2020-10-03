@@ -7,29 +7,6 @@ router.get("/", function (req, res, next) {
   res.render("index", { title: "Express" });
 });
 
-/*
-client에서 데이터를 보낼 때 3가지 방법
-
-1. query String 방식
-  http://localhost:3000/?변수=변수값&변수2=변수값
-  let 변수1 = req.query.변수1
-  let 변수2 = req.query.변수2
-
-2. path variable 방식 : URL처럼 값을 보내는 방법 
-  http://localhost:3000/값1/값2
-  router.get("/:변수1/:변수2")
-  let 변수1 = req.params.변수1
-  let 변수2 = req.params.변수2
-
-3. form에 input에 값을 담아서 post를 보내는 방법
-    form(method="POST")
-      input(name="변수1")
-      input(name="변수2")  
-
-    let 변수1 = req.body.변수1
-    let 변수2 = req.body.변수2
-
- */
 router.post("/", function (req, res) {
   let todo = req.body.todo;
 
