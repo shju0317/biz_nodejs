@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // todo_list 배열에 데이터가 있으면 localStorage에 저장하기
   if (todo_list.length > 0) {
     console.log(todo_list);
-    localStorage.setItem("todo_list", JSON.stringify(todo_list));
+   // localStorage.setItem("todo_list", JSON.stringify(todo_list));
 
     // todo_list 배열을 반복문으로 순회하라
     // 각각의 아이템을 todo라는 이름을 익명함수에 주입하라

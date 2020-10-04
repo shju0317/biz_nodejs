@@ -22,9 +22,10 @@ mongoose.connect("mongodb://localhost/myTodo", {
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
-//var todoRouter = require("./routes/todoRoute");
 
 var app = express();
+
+app.locals.pretty = true;
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -38,9 +39,6 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
-
-// localhost:3000/todo/* 요청하면 todoRouter를 호출
-// app.use("/todo", todoRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
