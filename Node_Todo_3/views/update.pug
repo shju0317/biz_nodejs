@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    link(rel="stylesheet", href="/stylesheets/todo_update.css")
+    script.
+        document.addEventListener("DOMContentLoaded", function(){
+            document.querySelector("#btn-save").addEventListener("click",function(){
+                if (confirm("저장할까요?")) {
+                    document.querySelector("form").submit();
+                }
+            })
+        })
+
+    section
+        h1 My ToDo List
+        form(method="post", action="/update/" + todoVO._id)
+            input(type="text", name="t_text", placeholder="할 일", value= todoVO.to_text)
+            button(type="text" id="btn-save") 저장

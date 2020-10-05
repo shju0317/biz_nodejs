@@ -7,11 +7,10 @@
 //   todo_list = JSON.parse(todo_list_store);
 // }
 
-
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelector("#btn-save").addEventListener("click", function () {
-    let todo_input = document.querySelector("input");
-    todo_input = document.querySelector(
+    //let todo_input = document.querySelector("input");
+    let todo_input = document.querySelector(
       "section.todo_main form input[name='todo']"
     );
 
@@ -19,15 +18,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (todo_value === "") {
       alert("할 일을 입력하세요");
-      document.querySelectorAll("input")[0].focus();
-      document
-        .querySelector("section.todo_main form input[name='todo']")
-        .focus();
+      // document.querySelectorAll("input")[0].focus();
+      // document
+      //   .querySelector("section.todo_main form input[name='todo']")
+      //   .focus();
+      todo_input.focus();
       return false;
     }
 
     if (confirm("저장할까요?")) {
       document.querySelector("form").submit();
     }
+  });
+
+  document.querySelectorAll("#btn-update").forEach(function (todo_text) {
+    todo_text.addEventListener("click", function () {
+      let id = todo_text.getAttribute("data-id");
+      document.location.href = "/update/" + id;
+    });
+  });
+
+  document.querySelectorAll("#btn-delete").forEach(function (todo_text) {
+    todo_text.addEventListener("click", function () {
+      let id = todo_text.getAttribute("data-id");
+      if (confirm("삭제할까요?")) {
+        document.location.href = "/delete/" + id;
+      }
+    });
   });
 });
